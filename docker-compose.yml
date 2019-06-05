@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     ports:
+       - "33063:3306"
+     environment:
+       MYSQL_ROOT_PASSWORD: mapads
+       MYSQL_DATABASE: laravelambiente
+       MYSQL_USER: root
+       MYSQL_PASSWORD: mapads
+
+   laravel:
+
+     depends_on:
+       - db
+     build: .
+     ports:
+       - "8001:80"
+     volumes:
+       - ".:/var/www/html"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: root
+       WORDPRESS_DB_PASSWORD: mapads
+       WORDPRESS_DB_NAME: laravelambiente
+
+volumes:
+    db_data: {}
