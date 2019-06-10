@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
         return [
             'name'          => 'required',
             'description'   => 'required',
-            'price'         => 'required | numeric | between:0,99.99'
+            'price'         => 'required | numeric | between:0,9999.99'
 
         ];
     }
