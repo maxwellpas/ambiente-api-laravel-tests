@@ -28,6 +28,13 @@ class ProductControllerTest extends TestCase
     }
 
 
+    public function testBuscaProdutoPorIdComString()
+    {
+        $response = $this->json('GET', '/api/product/wer');
+        $response->assertStatus(404);
+    }
+
+
     public function testCreateProduto()
     {
     	$response = $this->json('POST', '/api/products',[

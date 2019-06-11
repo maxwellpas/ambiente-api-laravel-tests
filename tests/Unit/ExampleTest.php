@@ -27,19 +27,6 @@ class ExampleTest extends TestCase
     // }
 
 
-    
-
-    // public function testProdutos()
-    // {
-    // 	// $response = $this->call('GET', '/api/products');
-    // 	$response = $this->get('/api/agoravai');
-
-    // 	//$response = $this->json('GET', '/api/products');
-
-
-    // 	$this->assertEquals(200, $response->status());
-    // }
-
     public function testNumerosRomanosExatos()
     {
     	$utils = new UtilsTesteController();
@@ -84,8 +71,6 @@ class ExampleTest extends TestCase
 
     // 	$actual = $utils->inverterData('');
     // 	//$this->assertEmpty($actual);
-
-
     // }
 
 
