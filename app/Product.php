@@ -4,11 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Builder;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    protected $fillable= ['name', 'price', 'description'];
-    
+    use SoftDeletes;
+
+    protected $fillable = ['name', 'price', 'description'];
+
+    protected $dates = ['deleted_at'];
+
 
     /**
      * Aplicação de funções globais desatualizada
